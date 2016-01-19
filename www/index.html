@@ -5,7 +5,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="msapplication-tap-highlight" content="no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=0.5, maximum-scale=0.5, width=device-width" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=0.5, maximum-scale=0.5, width=device-width, target-densitydpi=medium-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
@@ -381,7 +381,7 @@
         </div>
 
         <!-- aboutModal -->
-        <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header mhead">
@@ -391,7 +391,7 @@
                 <h4>facebook 讚!</h4>
                 <ul>
                   <li>版權所有 &copy; Seohea Production</li>
-                  <li>版本 Alpha 0.2</li>
+                  <li>版本 Alpha 0.3</li>
                 </ul>
               </div>
               <div class="modal-footer">
@@ -402,7 +402,7 @@
         </div>
 
         <!-- warnModal -->
-        <div class="modal fade" id="warnModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal" id="warnModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header mhead">
@@ -424,7 +424,7 @@
         </div>
 
         <!-- removeModal -->
-        <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header mhead">
@@ -443,7 +443,7 @@
         </div>
 
         <!-- remove2Modal -->
-        <div class="modal fade" id="remove2Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal" id="remove2Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header mhead">
@@ -461,15 +461,45 @@
           </div>
         </div>
         
+        <!--tutorModal-->
+        <div class="modal" id="tutorModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header mhead">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="glyphicon glyphicon-remove"></span></button>
+                <h4 class="modal-title" id="myModalLabel">常見問題</h4>
+              </div>
+              <div class="modal-body" style="padding:10px;">
+                    <table>
+                        <tr><td width="30px;">Q:</td><td>如何追蹤網頁LIKE數?</td></tr>
+                        <tr><td width="30px;">A:</td><td>按新增追蹤，輸入網址及名稱(自訂)，再按確定。</td></tr>
+                        <tr><td width="30px;">Q:</td><td>可以追蹤什麼網頁的LIKE數?</td></tr>
+                        <tr><td width="30px;">A:</td><td>什麼網頁都可以追蹤!</td></tr>
+                        <tr><td width="30px;">Q:</td><td>例子？</td></tr>
+                        <tr><td width="30px;">A:</td><td>1. 羅志祥 facebook 粉絲頁LIKE數<br>2. 討論區帖子FB like數</td></tr>
+                        <tr><td width="30px;">Q:</td><td>為何粉絲頁like數是0?</td></tr>
+                        <tr><td width="30px;">A:</td><td>錯誤例子: zh-hk.facebook.com/IsShow<br>正確例子: www.facebook.com/IsShow</td></tr>
+                        <tr><td width="30px;">A:</td><td>錯誤例子: zh-hk.facebook.com/IsShow<br>正確例子: www.facebook.com/IsShow</td></tr>
+                        <tr><td width="30px;">Q:</td><td>為何頁面顯示 "無法取得Likes!，請重新整理" ?</td></tr>
+                        <tr><td width="30px;">A:</td><td>因為網速太慢導致操作逾時, 請確保能夠成功連接至互聯網</td></tr>
+                    </table>
+                    <br>
+              </div>
+            </div>
+          </div>
+        </div>
 
         <!-- moreModal -->
-        <div class="modal fade" id="moreModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal" id="moreModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-body" style="padding:0px;">
                 <div class="btn-group-vertical" role="group" aria-label="..." style="width:100%;!important">
                     <div class="btn-group" role="group">
                         <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#remove2Modal"><span class="glyphicon glyphicon-trash"></span>&nbsp;清除全部追蹤</button>
+                    </div>
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#tutorModal"><span class="glyphicon glyphicon-question-sign"></span>&nbsp;常見問題</button>
                     </div>
                     <div class="btn-group" role="group">
                         <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="window.open('https://play.google.com/store/apps/details?id=com.seo.facebookjang');"><span class="glyphicon glyphicon-thumbs-up"></span>&nbsp;評分</button>
@@ -496,10 +526,10 @@
             <div class="container" style="padding:0px;">
                 <div class="btn-group btn-group-justified" role="group" aria-label="...">
                     <div class="btn-group btn-group" role="group">
-                        <button class="btn btn-info btn-sm" type="button" data-toggle="modal" data-target="#inputModal"><span id="icon" class="glyphicon glyphicon-plus"></span><br><span class="icon_caption">新增追蹤</span></button>
+                        <button class="btn btn-info" type="button" data-toggle="modal" data-target="#inputModal"><span id="icon" class="glyphicon glyphicon-plus"></span><br><span class="icon_caption">新增追蹤</span></button>
                     </div>
                     <div class="btn-group btn-group" role="group">
-                        <button class="btn btn-info btn-sm" type="button" onclick="retrieve_info();"><span id="icon" class="glyphicon glyphicon-refresh"></span><br><span class="icon_caption">重新整理</span></button>
+                        <button class="btn btn-info" type="button" onclick="retrieve_info();"><span id="icon" class="glyphicon glyphicon-refresh"></span><br><span class="icon_caption">重新整理</span></button>
                     </div>
                 </div>
             </div>
