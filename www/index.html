@@ -307,18 +307,24 @@
                 });
 */
                 
+                document.addEventListener("resume", onResume, false);
+                document.addEventListener("backbutton", onBackKeyDown, false);
+            }
 
-                document.addEventListener("backbutton", function(e){
-                   e.preventDefault();
-                   navigator.app.exitApp();  
-                }, false);
+            function onBackKeyDown() {
+ 
+                if($('.modal').is(':visible')){
+                    $('.modal').modal('hide');
+                    return false;
+                }
+                return false;
             }
 
             function onResume() {
             }
 
             document.addEventListener("deviceready", onDeviceReady, false);
-            document.addEventListener("resume", onResume, false);
+            
 
             
 
@@ -385,7 +391,7 @@
                 <h4>facebook 讚!</h4>
                 <ul>
                   <li>版權所有 &copy; Seohea Production</li>
-                  <li>版本 Alpha 0.1</li>
+                  <li>版本 Alpha 0.2</li>
                 </ul>
               </div>
               <div class="modal-footer">
