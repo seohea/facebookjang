@@ -28,6 +28,8 @@
 
             }
 
+            .btn:hover, .btn:focus, .btn:active { outline: none !important; background-color: white; color:#4c7ee7;} .btn { outline: none; }
+
             #header1{
                 background-color: #3f5d9f;
                 height: 58px;
@@ -117,6 +119,13 @@
             #loading{
                 text-align: center;
                 display: none;
+            }
+
+            .moveanimation {-webkit-animation: anim1 ease-in-out 1s infinite alternate; }
+            @-webkit-keyframes anim1
+            {
+               from {-webkit-transform: rotate(0deg); }
+               to   {-webkit-transform: rotate(360deg); }
             }
 
         </style>
@@ -342,8 +351,11 @@
                 if($('.modal').is(':visible')){
                     $('.modal').modal('hide');
                     return false;
+                }else{
+                    navigator.app.exitApp();
+                    return false;
                 }
-                return false;
+                
             }
 
             function onResume() {
@@ -375,7 +387,7 @@
 
             <div class="container">
                 <div class="row">
-                    <div id="loading"><br><span class="glyphicon glyphicon-refresh" style="font-size:22px;"></span><br><p>正在讀取Like數...</p></div>
+                    <div id="loading"><br><span class="glyphicon glyphicon-refresh moveanimation" style="font-size:22px;"></span><br><p>正在讀取Like數...</p></div>
                     <div id="tiles"></div>
                 </div>
             </div>
@@ -417,7 +429,7 @@
                 <h4>facebook 讚!</h4>
                 <ul>
                   <li>版權所有 &copy; Seohea Production</li>
-                  <li>版本 0.4</li>
+                  <li>版本 0.5</li>
                 </ul>
               </div>
               <div class="modal-footer">
@@ -455,7 +467,7 @@
             <div class="modal-content">
               <div class="modal-header mhead">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="removeModal_title">確認要取消<span></span>的追蹤嗎？</h4>
+                <h4 class="modal-title" id="removeModal_title">確認要取消&nbsp;<B><span></span></B>&nbsp;的追蹤嗎？</h4>
               </div>
               <div class="modal-body">
                 <div class="btn-group btn-group-justified" role="group" aria-label="...">
