@@ -31,6 +31,7 @@
             #header1{
                 background-color: #3f5d9f;
                 height: 58px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.19), 0 1px 1px rgba(0,0,0,0.23);
             }
 
             #header_well{
@@ -289,6 +290,7 @@
             
             function select_panel(id){
                 target_name = $("#"+id+" .pname").text();
+                $('#removeModal_title span').text(target_name);
             }
 
             function remove_item(){
@@ -297,6 +299,27 @@
                 retrieve_info();
                 target_name = "";
             }
+
+            function stringStartsWith (string, prefix) {
+                return string.slice(0, prefix.length) == prefix;
+            }
+
+            function open_page(url){
+                if(!stringStartsWith(url, "http")){
+                    url = "http://"+url;
+                }
+                window.open(url);
+            }
+
+            function initAds() {
+                if (admob) {
+                    admob.setOptions({
+                        publisherId: "ca-app-pub-9969581706012169/8285941530",
+                        isTesting:true
+                    });
+                } 
+            }
+
 
             //------ADS
             function onDeviceReady() {
@@ -309,6 +332,9 @@
                 
                 document.addEventListener("resume", onResume, false);
                 document.addEventListener("backbutton", onBackKeyDown, false);
+
+                initAds();
+                admob.createBannerView();
             }
 
             function onBackKeyDown() {
@@ -391,7 +417,7 @@
                 <h4>facebook 讚!</h4>
                 <ul>
                   <li>版權所有 &copy; Seohea Production</li>
-                  <li>版本 Alpha 0.3</li>
+                  <li>版本 0.4</li>
                 </ul>
               </div>
               <div class="modal-footer">
@@ -429,7 +455,7 @@
             <div class="modal-content">
               <div class="modal-header mhead">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">確認要取消追蹤嗎？</h4>
+                <h4 class="modal-title" id="removeModal_title">確認要取消<span></span>的追蹤嗎？</h4>
               </div>
               <div class="modal-body">
                 <div class="btn-group btn-group-justified" role="group" aria-label="...">
@@ -479,9 +505,10 @@
                         <tr><td width="30px;">A:</td><td>1. 羅志祥 facebook 粉絲頁LIKE數<br>2. 討論區帖子FB like數</td></tr>
                         <tr><td width="30px;">Q:</td><td>為何粉絲頁like數是0?</td></tr>
                         <tr><td width="30px;">A:</td><td>錯誤例子: zh-hk.facebook.com/IsShow<br>正確例子: www.facebook.com/IsShow</td></tr>
-                        <tr><td width="30px;">A:</td><td>錯誤例子: zh-hk.facebook.com/IsShow<br>正確例子: www.facebook.com/IsShow</td></tr>
                         <tr><td width="30px;">Q:</td><td>為何頁面顯示 "無法取得Likes!，請重新整理" ?</td></tr>
                         <tr><td width="30px;">A:</td><td>因為網速太慢導致操作逾時, 請確保能夠成功連接至互聯網</td></tr>
+                        <tr><td width="30px;">Q:</td><td>有沒有存取上限?</td></tr>
+                        <tr><td width="30px;">A:</td><td>存取上限為每一小時200次</td></tr>
                     </table>
                     <br>
               </div>
@@ -546,7 +573,7 @@
                                         <td rowspan="3"><img src="img/profile.gif" id="profile_img"/></td>
                                         <td><h4 class="panel-title pname">無法取得Likes!，請重新整理</h4></td> 
                                     </tr>
-                                    <tr><td><p class="purl"></p></td></tr>
+                                    <tr><td><p class="purl" onclick="open_page($(this).text());"></p></td></tr>
                                     <tr><td><p class="ptime"></p></td></tr>
                                 </table>
                             </td>
