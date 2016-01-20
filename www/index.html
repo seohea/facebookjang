@@ -48,7 +48,7 @@
             .myPanel{
                 margin: 15px 10px;
                 border: 0px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+                box-shadow: 0 2px 5px rgba(0,0,0,0.19), 0 1px 1px rgba(0,0,0,0.23);
             }
 
             .myPanel .panel-heading{
@@ -119,6 +119,7 @@
             #loading{
                 text-align: center;
                 display: none;
+                color:#4d4d4d;
             }
 
             .moveanimation {-webkit-animation: anim1 ease-in-out 1s infinite alternate; }
@@ -236,7 +237,7 @@
                     });
                 }
 
-                setTimeout(gen_tiles, 1800);
+                setTimeout(gen_tiles, 2800);
                 ga_storage._trackEvent('Get from FB', 'no.of page: '+fblist.length, '');
             }
 
@@ -402,8 +403,11 @@
                 <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-screenshot"></span>&nbsp;&nbsp;新增追蹤頁</h4>
               </div>
               <div class="modal-body">
-                  <input type="text" class="form-control" id="input_url" value="" placeholder="在此輸入網址"/>
-                  <input type="text" class="form-control" id="input_name" value="" placeholder="在此輸入網址名稱"/>
+                    <label for="basic-url">網址名稱</label>
+                    <input type="text" class="form-control" id="input_name" value="" placeholder="在此輸入網址名稱"/>
+                    <br>
+                    <label for="basic-url">網址</label>
+                    <input type="text" class="form-control" id="input_url" value="" placeholder="在此輸入網址"/>
               </div>
               <div class="modal-footer">
                 <div class="alert alert-danger al1" role="alert" style="text-align:center; display:none;"><span class="glyphicon glyphicon-warning-sign"></span>&nbsp;&nbsp;請輸入網站名稱<b>及</b>網址</div>
@@ -429,7 +433,7 @@
                 <h4>facebook 讚!</h4>
                 <ul>
                   <li>版權所有 &copy; Seohea Production</li>
-                  <li>版本 0.5</li>
+                  <li>版本 0.6</li>
                 </ul>
               </div>
               <div class="modal-footer">
@@ -510,17 +514,17 @@
               <div class="modal-body" style="padding:10px;">
                     <table>
                         <tr><td width="30px;">Q:</td><td>如何追蹤網頁LIKE數?</td></tr>
-                        <tr><td width="30px;">A:</td><td>按新增追蹤，輸入網址及名稱(自訂)，再按確定。</td></tr>
+                        <tr><td width="30px;">A:</td><td>按新增追蹤，輸入網址及名稱，再按確定。</td></tr>
                         <tr><td width="30px;">Q:</td><td>可以追蹤什麼網頁的LIKE數?</td></tr>
                         <tr><td width="30px;">A:</td><td>什麼網頁都可以追蹤!</td></tr>
                         <tr><td width="30px;">Q:</td><td>例子？</td></tr>
                         <tr><td width="30px;">A:</td><td>1. 羅志祥 facebook 粉絲頁LIKE數<br>2. 討論區帖子FB like數</td></tr>
                         <tr><td width="30px;">Q:</td><td>為何粉絲頁like數是0?</td></tr>
-                        <tr><td width="30px;">A:</td><td>錯誤例子: zh-hk.facebook.com/IsShow<br>正確例子: www.facebook.com/IsShow</td></tr>
+                        <tr><td width="30px;">A:</td><td>請確認網址Facebook能夠分析。<br>常見錯誤例子: zh-hk.facebook.com/IsShow<br>正確例子: www.facebook.com/IsShow</td></tr>
                         <tr><td width="30px;">Q:</td><td>為何頁面顯示 "無法取得Likes!，請重新整理" ?</td></tr>
                         <tr><td width="30px;">A:</td><td>因為網速太慢導致操作逾時, 請確保能夠成功連接至互聯網</td></tr>
                         <tr><td width="30px;">Q:</td><td>有沒有存取上限?</td></tr>
-                        <tr><td width="30px;">A:</td><td>存取上限為每一小時200次</td></tr>
+                        <tr><td width="30px;">A:</td><td>存取上限為約每一小時200次</td></tr>
                     </table>
                     <br>
               </div>
@@ -586,7 +590,7 @@
                                         <td><h4 class="panel-title pname">無法取得Likes!，請重新整理</h4></td> 
                                     </tr>
                                     <tr><td><p class="purl" onclick="open_page($(this).text());"></p></td></tr>
-                                    <tr><td><p class="ptime"></p></td></tr>
+                                    <tr><td><p class="ptime">因網速太慢導致操作逾時,請確保能夠成功連接至互聯網</p></td></tr>
                                 </table>
                             </td>
                             <td width="1%" valign="top">
