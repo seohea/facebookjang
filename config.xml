@@ -1,4 +1,4 @@
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.seo.facebookjang" version="0.6">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.seo.facebookjang" version="0.7">
   <name>Facebook讚</name>
   <description>Facebook讚</description>
   <author href="" email="seohea.production@gmail.com">Seohea Production</author>

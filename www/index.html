@@ -45,6 +45,14 @@
                 text-align:center;
             }
 
+            #brand_title{
+                float:left; 
+                padding-left:5%; 
+                color:white; 
+                font-size:20px; 
+                line-height:24px;
+            }
+
             .myPanel{
                 margin: 15px 10px;
                 border: 0px;
@@ -81,8 +89,12 @@
             }
 
             .fb-like-box img{
-                height: 32px;
-                width: 32px;
+                width: auto;
+                height : auto;
+                max-height: 100%;
+                max-width: 100%;
+                display: block;
+                float:left;
             }
 
             .purl, .ptime{
@@ -167,7 +179,7 @@
 
             function set_tiles_view_height(){
                 var height = $(document).height() - $("#header1").height() - $(".btmnav").height();
-                $("#tiles").css("height",height*0.95);
+                $("#tiles").css("height",height*0.85);
             }
 
             function add(){
@@ -218,6 +230,7 @@
 
             function retrieve_info(){
                 $("#loading").show();
+                $('#tiles').animate({ scrollTop: 0 });
 
                 fb_detail_list = [];
 
@@ -325,7 +338,7 @@
                 if (admob) {
                     admob.setOptions({
                         publisherId: "ca-app-pub-9969581706012169/8285941530",
-                        isTesting:true
+                        isTesting:false
                     });
                 } 
             }
@@ -375,7 +388,7 @@
         <div id="first_page" style="display:block;">
             <header id="header1">
                 <div class="container" style="padding: 15px 0px 0px;">
-                    <span style="float:left; padding-left:5%; color:white; font-size:20px; line-height:24px;">
+                    <span id="brand_title">
                         <span style="font-size:24px;">f</span>acebook 讚!
                     </span>
                     <span style="float:right; padding-right:5%; color:white; font-size:20px;" data-toggle="modal" data-target="#moreModal">
@@ -407,7 +420,7 @@
                     <input type="text" class="form-control" id="input_name" value="" placeholder="在此輸入網址名稱"/>
                     <br>
                     <label for="basic-url">網址</label>
-                    <input type="text" class="form-control" id="input_url" value="" placeholder="在此輸入網址"/>
+                    <input type="url" class="form-control" id="input_url" value="" placeholder="在此輸入網址"/>
               </div>
               <div class="modal-footer">
                 <div class="alert alert-danger al1" role="alert" style="text-align:center; display:none;"><span class="glyphicon glyphicon-warning-sign"></span>&nbsp;&nbsp;請輸入網站名稱<b>及</b>網址</div>
@@ -433,7 +446,7 @@
                 <h4>facebook 讚!</h4>
                 <ul>
                   <li>版權所有 &copy; Seohea Production</li>
-                  <li>版本 0.6</li>
+                  <li>版本 0.7</li>
                 </ul>
               </div>
               <div class="modal-footer">
