@@ -179,7 +179,7 @@
 
             function set_tiles_view_height(){
                 var height = $(document).height() - $("#header1").height() - $(".btmnav").height();
-                $("#tiles").css("height",height*0.85);
+                $("#tiles").css("height",height*0.87);
             }
 
             function add(){
@@ -314,6 +314,10 @@
             function select_panel(id){
                 target_name = $("#"+id+" .pname").text();
                 $('#removeModal_title span').text(target_name);
+
+                if(target_name.indexOf("無法取得Likes!，請重新整理") == -1){
+                    $("#removeModal").modal('show');
+                }
             }
 
             function remove_item(){
@@ -440,13 +444,13 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header mhead">
-                <h4 class="modal-title" id="myModalLabel">關於</h4>
+                <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;關於</h4>
               </div>
               <div class="modal-body">
                 <h4>facebook 讚!</h4>
                 <ul>
                   <li>版權所有 &copy; Seohea Production</li>
-                  <li>版本 0.7</li>
+                  <li>版本 0.8</li>
                 </ul>
               </div>
               <div class="modal-footer">
@@ -607,13 +611,13 @@
                                 </table>
                             </td>
                             <td width="1%" valign="top">
-                                <span class="glyphicon glyphicon-remove" style="color:#d9d9d9;" type="button" data-toggle="modal" data-target="#removeModal" onclick="select_panel($(this).closest('.panel').attr('id'));"></span>
+                                <span class="glyphicon glyphicon-remove" style="color:#d9d9d9;" type="button" onclick="select_panel($(this).closest('.panel').attr('id'));"></span>
                             </td>
                         </tr>
                     </table>
                 </div>
                 <div class="panel-body">
-                    <span class="fb-like-box"><img src="img/fb_icon.gif"/>&nbsp;&nbsp;<span style="font-size:20px;" id="likes_num">?</span><span>&nbsp;&nbsp;Likes</span></span>
+                    <span class="fb-like-box"><img src="img/fb_icon.png"/>&nbsp;&nbsp;<span style="font-size:20px;" id="likes_num">?</span><span>&nbsp;&nbsp;Likes</span></span>
                 </div>
             </div>
         </script>
